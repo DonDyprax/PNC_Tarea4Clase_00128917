@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingresar nuevo producto</title>
+</head>
+<body>
+	<h1>Ingreso de nuevo producto:</h1>
+	
+	<form action='POST' th:action="@{/validacion}" th:object="${product}">
+		<label for="productCode">Codigo: </label> 
+		<input th:field="*{code}" id="productCode" name="productCode" type="text" placeholder="111111111111">
+		<span th:errors="*{code}" style="color:#FF0000"></span>
+		<br>
+		<label for="productName">Nombre: </label> 
+		<input th:field="*{name}" id="productName" name="productName" type="text" placeholder="Jugo de naranja">
+		<span th:errors="*{name}" style="color:#FF0000"></span>
+		<br>
+		<label for="productBrand">Marca: </label> 
+		<input th:field="*{brand}" id="productBrand" name="productBrand" type="text" placeholder="Jumex">
+		<span th:errors="*{brand}" style="color:#FF0000"></span>
+		<br>
+		<label for="productDescription">Descripcion: </label> 
+		<textarea th:field="*{description}" id="productDescription" name="productDescription" rows="5" cols="50" placeholder="Jugo de naranja 100% natural"></textarea>
+		<span th:errors="*{description}" style="color:#FF0000"></span>
+		<br>
+		<label for="productStock">Existencias: </label> 
+		<input th:field="*{stock}" id="productStock" name="productStock" type="text" placeholder="5">
+		<span th:errors="*{stock}" style="color:#FF0000"></span>
+		<br>
+		<label for="productDate">Fecha de ingreso: </label> 
+		<input th:field="*{date}" id="productDate" name="productDate" type="text" placeholder="mm/dd/yyyy">
+		<span th:errors="*{date}" style="color:#FF0000"></span>
+		<br>
+		<input type="submit" value="Guardar Producto">
+	</form>
+</body>
+</html>
